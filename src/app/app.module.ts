@@ -9,7 +9,7 @@ import { ReactiveFormsModule } from "@angular/forms";
 
 import { environment } from "src/environments/environment";
 import { AngularFireModule } from "@angular/fire";
-import { AngularFirestoreModule } from "@angular/fire;
+import { AngularFirestoreModule, SETTINGS as FIRESTORE_SETTINGS } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [

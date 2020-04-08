@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "loyal-channel-250108": {
+      "hosting": {
+        "website2": [
+          "loyal-channel-250108"
+        ]
+      }
+    }
+  }
+}

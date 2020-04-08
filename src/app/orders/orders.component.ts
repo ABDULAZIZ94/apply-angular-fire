@@ -9,8 +9,10 @@ import { OrdersService } from "../shared/orders.service";
 export class OrdersComponent implements OnInit {
 
   coffees = ["Americano", "Flat White", "Cappuccino", "Latte", "Espresso", "Machiato", "Mocha", "Hot Chocolate", "Tea"];
+  
+  constructor( public ordersService:OrdersService){
 
-  constructor(private ordersService:OrdersService){}
+  }
 
   ngOnInit(): void {
   }
