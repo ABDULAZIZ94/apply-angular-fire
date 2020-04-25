@@ -14,7 +14,7 @@ import { AngularFireAuthGuardModule } from '@angular/fire/auth-guard';
     CommonModule,
     FontAwesomeModule,
     AngularFireAuthGuardModule,
-    SocialLoginRoutingModule
+    SocialLoginRoutingModule,
   ]
 })
 export class SocialLoginModule { }

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SocialLoginComponent } from './social-login/social-login.component';
 import { AngularFireAuthGuard, hasCustomClaim,
-   redirectLoggedInTo, redirectUnauthorizedTo } from '@angular/fire/auth-guard/auth-guard';
+   redirectLoggedInTo, redirectUnauthorizedTo } from '@angular/fire/auth-guard'; //dont use auto import
 
 const adminOnly = () => hasCustomClaim('admin');
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
@@ -12,11 +12,11 @@ const belongsToAccount = (next) => hasCustomClaim(`account-${next.params.id}`);
 const routes: Routes = [
   { 
     path:'login', component: SocialLoginComponent,
-    canActivate: [AngularFireAuthGuard], 
-    data: { authGuardPipe: redirectLoggedInToWriter } 
+  
   }
 ];
-
+  // canActivate: [AngularFireAuthGuard], 
+    // data: { authGuardPipe: redirectLoggedInToWriter } 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]

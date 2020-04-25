@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { WriterComponent } from './writer/writer.component';
-import { AngularFireAuthGuard, redirectUnauthorizedTo } from '@angular/fire/auth-guard/auth-guard';
+import { AngularFireAuthGuard, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
 
 
 const routes: Routes = [

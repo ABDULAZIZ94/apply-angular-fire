@@ -34,12 +34,13 @@ import { HomepageComponent } from './homepage/homepage.component';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    AngularFireAuthGuardModule,
-    AngularFirestoreModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig), 
     WriterModule,
     SocialLoginModule,
+    AngularFirestoreModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig), 
+    AngularFireAuthGuardModule,
     AppRoutingModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,6 +3,9 @@ import { FormControl } from '@angular/forms';
 import { faGoogle, faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 
+import { AngularFireAuth } from '@angular/fire/auth';
+import { auth } from 'firebase/app';
+
 @Component({
   selector: 'app-social-login',
   templateUrl: './social-login.component.html',

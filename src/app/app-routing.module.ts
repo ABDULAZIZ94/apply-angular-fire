@@ -3,9 +3,12 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
+import { SocialLoginComponent } from './social-login/social-login/social-login.component';
 
 const route:Routes = [
-  { path:'', component: HomepageComponent },
+  { path: 'login', component: SocialLoginComponent},
+  { path: '', component: HomepageComponent, pathMatch: 'full' },
   { path:'**', component: PageNotFoundComponent}
 ];
 
