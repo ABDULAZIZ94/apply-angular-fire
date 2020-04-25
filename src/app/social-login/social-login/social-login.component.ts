@@ -4,7 +4,7 @@ import { faGoogle, faTwitter, faGithub } from '@fortawesome/free-brands-svg-icon
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 
 import { AngularFireAuth } from '@angular/fire/auth';
-import { auth } from 'firebase/app';
+import { auth } from 'firebase/app';import 'firebase/auth';
 
 @Component({
   selector: 'app-social-login',
@@ -20,9 +20,12 @@ export class SocialLoginComponent implements OnInit {
   faGoogle = faGoogle;
   faPhone = faPhone;
   
-  constructor() { }
+  constructor(public auth: AngularFireAuth) { }
 
   ngOnInit(): void {
   }
 
+  googleLogin(){
+    this.auth.signInWithPopup(new auth.GoogleAuthProvider() );
+  }
 }
