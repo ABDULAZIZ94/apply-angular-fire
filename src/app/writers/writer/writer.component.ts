@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SocialLoginService } from 'src/app/social-login/social-login.service';
 
 @Component({
   selector: 'app-writer',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WriterComponent implements OnInit {
 
-  constructor() { }
+  constructor(public authService: SocialLoginService) { }
 
   ngOnInit(): void {
   }
-
+  logout(){
+    this.authService.logout();
+  }
 }

@@ -3,8 +3,7 @@ import { FormControl } from '@angular/forms';
 import { faGoogle, faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 
-import { AngularFireAuth } from '@angular/fire/auth';
-import { auth } from 'firebase/app';import 'firebase/auth';
+import { SocialLoginService } from '../social-login.service';
 
 @Component({
   selector: 'app-social-login',
@@ -20,12 +19,15 @@ export class SocialLoginComponent implements OnInit {
   faGoogle = faGoogle;
   faPhone = faPhone;
   
-  constructor(public auth: AngularFireAuth) { }
+  constructor(public authService: SocialLoginService) { }
 
   ngOnInit(): void {
   }
 
   googleLogin(){
-    this.auth.signInWithPopup(new auth.GoogleAuthProvider() );
+    this.authService.googleLogin();
+  }
+  logout(){
+    this.authService.logout();
   }
 }

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { AngularFireAuth } from '@angular/fire/auth';
+import * as firebase from 'firebase/app';
 
 
 @Injectable({
@@ -8,5 +9,13 @@ import { AngularFireAuth } from '@angular/fire/auth';
 })
 export class SocialLoginService {
 
-  constructor() { }
+  constructor(public auth: AngularFireAuth) { }
+
+  googleLogin() {
+    this.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+    // this.auth.signInWithRedirect(new auth.GoogleAuthProvider);
+  }
+  logout() {
+    this.auth.signOut();
+  }
 }
