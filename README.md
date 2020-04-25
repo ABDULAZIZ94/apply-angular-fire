@@ -1,6 +1,6 @@
 # overview
 this project is about implementation of angular-fire module. Fontaawosome module also used in this project.
-
+if refresh not working see router outlet :)
 # actors
     1. users
     2. writers
