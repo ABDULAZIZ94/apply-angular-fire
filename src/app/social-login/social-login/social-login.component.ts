@@ -4,6 +4,7 @@ import { faGoogle, faTwitter, faGithub } from '@fortawesome/free-brands-svg-icon
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 
 import { SocialLoginService } from '../social-login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-social-login',
@@ -19,9 +20,20 @@ export class SocialLoginComponent implements OnInit {
   faGoogle = faGoogle;
   faPhone = faPhone;
   
-  constructor(public authService: SocialLoginService) { }
+  constructor(public authService: SocialLoginService, public router:Router) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    console.log('ngOnInit()');
+    this.authService.auth.authState.subscribe((user => {
+      if (user) {
+        console.log('user is: ' + user);
+        this.router.navigate['writer'];
+      } else {
+        console.log('user is: ' + user);
+        this.router.navigate['login'];
+      }
+    })
+    );
   }
 
   googleLogin(){

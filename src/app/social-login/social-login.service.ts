@@ -1,21 +1,27 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase/app';
+import { Router } from '@angular/router';
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class SocialLoginService {
+export class SocialLoginService{
 
-  constructor(public auth: AngularFireAuth) { }
+  constructor(public auth: AngularFireAuth, public router:Router) { }
 
   googleLogin() {
-    this.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
-    // this.auth.signInWithRedirect(new auth.GoogleAuthProvider);
+    console.log('googleLogin()');
+    // this.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
+    // .then(this.router.navigate['/writer']); 
+   this.auth.signInWithRedirect(new firebase.auth.GoogleAuthProvider());
   }
   logout() {
-    this.auth.signOut();
+    console.log('logout');
+    this.auth.signOut()
+    // .then(() => console.log('logout().then()'));
   }
+  
 }
