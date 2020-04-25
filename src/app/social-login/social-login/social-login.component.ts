@@ -10,8 +10,8 @@ import { faPhone } from '@fortawesome/free-solid-svg-icons';
 })
 export class SocialLoginComponent implements OnInit {
 
-  id = new FormControl("");
-  pswd = new FormControl("");
+  // id = new FormControl("");
+  // pswd = new FormControl("");
   faGithub = faGithub;
   faTwitter = faTwitter;
   faGoogle = faGoogle;

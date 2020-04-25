@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SocialLoginComponent } from './social-login.component';
+import { WriterComponent } from './writer.component';
 
-describe('SocialLoginComponent', () => {
-  let component: SocialLoginComponent;
-  let fixture: ComponentFixture<SocialLoginComponent>;
+describe('WriterComponent', () => {
+  let component: WriterComponent;
+  let fixture: ComponentFixture<WriterComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SocialLoginComponent ]
+      declarations: [ WriterComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SocialLoginComponent);
+    fixture = TestBed.createComponent(WriterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,3 +1,11 @@
+# overview
+this project is about implementation of angular-fire module. Fontaawosome module also used in this project.
+
+# actors
+    1. users
+    2. writers
+    3. admins
+
 # Website2
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
