@@ -8,20 +8,35 @@ import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
-export class SocialLoginService{
+export class SocialLoginService {
 
   constructor(public auth: AngularFireAuth, public router:Router) { }
 
-  googleLogin() {
+  async googleLogin() {
     console.log('googleLogin()');
-    // this.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
-    // .then(this.router.navigate['/writer']); 
-   this.auth.signInWithRedirect(new firebase.auth.GoogleAuthProvider());
+    this.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
+    // .then(() => this.navigate())
+    .then( (success) => this.router.navigate(['writer'])); 
+    //  this.auth.signInWithRedirect(new firebase.auth.GoogleAuthProvider());
   }
-  logout() {
+  async logout() {
     console.log('logout');
     this.auth.signOut()
-    // .then(() => console.log('logout().then()'));
+    // .then(() => this.navigate());
+    .then((success) => this.router.navigate(['login']));
   }
   
+  async navigate(){
+    console.log('navigate()');
+    this.auth.authState.subscribe(user => {
+      if (user) {
+        console.log('user is: ' + user);
+        async () => this.router.navigate(['writer']);
+      } else {
+        console.log('user is: ' + user);
+        async () => this.router.navigate(['login']);
+      }
+    });
+  }
+
 }

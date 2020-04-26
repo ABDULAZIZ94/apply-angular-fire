@@ -23,23 +23,18 @@ export class SocialLoginComponent implements OnInit {
   constructor(public authService: SocialLoginService, public router:Router) { }
 
   ngOnInit() {
-    console.log('ngOnInit()');
-    this.authService.auth.authState.subscribe((user => {
-      if (user) {
-        console.log('user is: ' + user);
-        this.router.navigate['writer'];
-      } else {
-        console.log('user is: ' + user);
-        this.router.navigate['login'];
-      }
-    })
-    );
+    this.authService.navigate();
   }
 
   googleLogin(){
     this.authService.googleLogin();
   }
+
   logout(){
     this.authService.logout();
+  }
+
+  goToHome(){
+    this.router.navigate(['']);
   }
 }
