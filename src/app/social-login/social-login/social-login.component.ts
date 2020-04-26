@@ -29,6 +29,9 @@ export class SocialLoginComponent implements OnInit {
   googleLogin(){
     this.authService.googleLogin();
   }
+  phoneLogin(){
+    
+  }
 
   logout(){
     this.authService.logout();

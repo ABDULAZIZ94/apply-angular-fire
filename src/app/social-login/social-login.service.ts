@@ -19,6 +19,9 @@ export class SocialLoginService {
     .then( (success) => this.router.navigate(['writer'])); 
     //  this.auth.signInWithRedirect(new firebase.auth.GoogleAuthProvider());
   }
+  async phoneLogin(){
+    this.auth.signInWithPhoneNumber();
+  }
   async logout() {
     console.log('logout');
     this.auth.signOut()
