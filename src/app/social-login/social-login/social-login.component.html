@@ -9,10 +9,11 @@
     <button class="github btn">
         <fa-icon [icon]="faGithub"></fa-icon> Github
     </button>
-    <button class="phone btn">
+    <button class="phone btn" (click)="phoneLogin()">
         <fa-icon [icon]="faPhone"></fa-icon> Phone
     </button>
     <button (click)="logout()">Sign Out</button>
     <button (click)="goToHome()">Home</button>
 </div>
+<div id="recaptcha-container"></div>
 

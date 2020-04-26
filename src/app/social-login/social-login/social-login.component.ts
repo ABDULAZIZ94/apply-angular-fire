@@ -23,14 +23,26 @@ export class SocialLoginComponent implements OnInit {
   constructor(public authService: SocialLoginService, public router:Router) { }
 
   ngOnInit() {
-    this.authService.navigate();
+    // this.authService.navigate();
+
   }
 
   googleLogin(){
     this.authService.googleLogin();
   }
   phoneLogin(){
-    
+    this.authService.recaptchaVerifier = new this.authService.firebase.auth.RecaptchaVerifier('recaptcha-container', {
+      'size': 'normal',
+      'callback': function (response) {
+        // reCAPTCHA solved, allow signInWithPhoneNumber.
+        // ...
+        this.authService.phoneLogin();
+      },
+      'expired-callback': function () {
+        // Response expired. Ask user to solve reCAPTCHA again.
+        // ...
+      }
+    });
   }
 
   logout(){

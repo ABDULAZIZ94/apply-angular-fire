@@ -1,7 +1,7 @@
 import { Injectable, OnInit } from '@angular/core';
 
 import { AngularFireAuth } from '@angular/fire/auth';
-import * as firebase from 'firebase/app';
+import * as firebase from 'firebase/app'; import("firebase/auth");
 import { Router } from '@angular/router';
 
 
@@ -10,7 +10,13 @@ import { Router } from '@angular/router';
 })
 export class SocialLoginService {
 
-  constructor(public auth: AngularFireAuth, public router:Router) { }
+  public recaptchaVerifier: firebase.auth.RecaptchaVerifier;
+  public firebase:any;
+
+  constructor(public auth: AngularFireAuth, public router:Router) { 
+    // firebase.auth().languageCode = 'en';
+    this.firebase = firebase;
+  }
 
   async googleLogin() {
     console.log('googleLogin()');
@@ -20,7 +26,9 @@ export class SocialLoginService {
     //  this.auth.signInWithRedirect(new firebase.auth.GoogleAuthProvider());
   }
   async phoneLogin(){
-    this.auth.signInWithPhoneNumber();
+    
+    firebase.auth().signInWithPhoneNumber('01156567424', this.recaptchaVerifier);
+    // .signInWithPhoneNumber('01156567424', this.recaptchaVerifier);
   }
   async logout() {
     console.log('logout');
