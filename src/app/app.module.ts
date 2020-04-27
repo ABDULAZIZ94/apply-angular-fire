@@ -2,8 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AppComponent } from './app.component';
-// import { OrdersComponent } from './orders/orders.component';
-// import { OrdersListComponent } from './orders-list/orders-list.component';
+import { OrdersComponent } from './orders/orders.component';
+import { OrdersListComponent } from './orders-list/orders-list.component';
 
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 
@@ -26,8 +26,8 @@ import { HomepageComponent } from './homepage/homepage.component';
     AppComponent,
     PageNotFoundComponent,
     HomepageComponent,
-    // OrdersComponent,
-    // OrdersListComponent,
+    OrdersComponent,
+    OrdersListComponent,
   ],
   imports: [
     BrowserModule,

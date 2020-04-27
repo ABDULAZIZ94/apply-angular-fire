@@ -5,14 +5,14 @@
 export const environment = {
   production: false,
   firebaseConfig: {
-    apiKey: "AIzaSyBNa7rKbdDnBVjdIwXGqx8bkXG-ezZSzQI",
-    authDomain: "karkun-d891e.firebaseapp.com",
-    databaseURL: "https://karkun-d891e.firebaseio.com",
-    projectId: "karkun-d891e",
-    storageBucket: "karkun-d891e.appspot.com",
-    messagingSenderId: "686142572665",
-    appId: "1:686142572665:web:7ffca68783eedb73936ca8",
-    measurementId: "G-VS9KJYG82J"
+    apiKey: "AIzaSyCdBf28OZeGin49vSGBCMxfIGEiObJev4k",
+    authDomain: "code-ajis.firebaseapp.com",
+    databaseURL: "https://code-ajis.firebaseio.com",
+    projectId: "code-ajis",
+    storageBucket: "code-ajis.appspot.com",
+    messagingSenderId: "953441184666",
+    appId: "1:953441184666:web:9759edf7e8df49754ca823",
+    measurementId: "G-75KBNESD83"
   }
 };
 
